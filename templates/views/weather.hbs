@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+{{> headerlinks}}
+  </head>
+<body>
+
+    {{> navbar}}
+    
+    <!-- main body  -->
+
+    <div class="container-fluid main_menu_body">
+        <div class="row">
+            <div class="col-md-10 col-12 m-auto">
+                <div class="main_content">
+                    <form class="temp_form">
+                   <input type="text"  id="cityname" placeholder="Enter your city name" autocomplete="off">
+                   <input type="submit" value="search" id="sbmbtn">
+                   </form>
+                   
+                </div>
+                <div class="temp_info">
+                    <div class="top_layer">
+                        <p id="day">Tuesday</p>
+                        <p > <span id="today_date">12</span>  <span id="month">nov</span> </p>
+                    </div>
+                    <div class="main_layer">
+                        <p id="city_name">Get The Output Here</p>
+                        <div class="middle_layer data_hide">
+                            <p id="temp"><span id="temp_value">0</span><sup>o</sup>C</p>
+                            <p id="temp_status"><i class="fa fa-cloud" aria-hidden="true"></i></p>
+                        </div>
+                    </div>
+                </div>
+              
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer code  -->
+
+     {{> footer}}
+
+     <script src="js/main.js">
+
+     </script>
+     <script>
+
+         
+         const getcurrdate = () =>{
+             let weekdays = new Array(7);
+             weekdays[0] = 'Sun';
+             weekdays[1] = 'Mon';
+             weekdays[2] = 'Tue';
+             weekdays[3] = 'Wed';
+             weekdays[4] = 'Thu';
+             weekdays[5] = 'Fri';
+             weekdays[6] = 'Sat';
+
+              let months = new Array(12);
+             months[0] = 'Jan';
+             months[1] = 'Feb';
+             months[2] = 'Mar';
+             months[3] = 'Apr';
+             months[4] = 'May';
+             months[5] = 'June';
+             months[6] = 'July';
+             months[8] = 'Aug';
+             months[9] = 'Sep';
+             months[10] = 'Oct';
+             months[11] = 'Nov';
+             months[12] = 'Dec';
+
+             let currenttime = new Date();
+             let days = weekdays[currenttime.getDay()];
+             let date = currenttime.getDate();
+             let day = document.getElementById('day');
+             let today = document.getElementById('today_date');
+             let monthss = months[currenttime.getMonth()];
+             let month = document.getElementById('month');  
+             console.log(monthss)
+
+             day.innerText = days;
+             today.innerText= date;
+             month.innerText = monthss;
+
+            
+
+
+         };
+         getcurrdate();
+     </script>
+</body>
+
+</html>
